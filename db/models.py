@@ -3,25 +3,25 @@ import datetime
 
 class Prototype(models.Model):
     isbn = models.IntegerField(primary_key=True)
-    bookName = models.CharField(max_length=100)
+    bookName = models.CharField(max_length=100,default="")
     newPrice = models.IntegerField()
-    publisher = models.CharField(max_length=100)
-    bookAuthor = models.CharField(max_length=100)
+    publisher = models.CharField(max_length=100,default="")
+    bookAuthor = models.CharField(max_length=100,default="")
     edition = models.IntegerField()
     year = models.IntegerField()
-    course = models.CharField(max_length=100)
-    faculty = models.CharField(max_length=100)
-    programme = models.CharField(max_length=100)
-    cover = models.CharField(max_length=100)
+    course = models.CharField(max_length=100,default="")
+    faculty = models.CharField(max_length=100,default="")
+    programme = models.CharField(max_length=100,default="")
+    cover = models.CharField(max_length=100,default="")
 
 
 class Seller(models.Model):
     def __init__(self, *args, **kwargs):
         models.Model.__init__(self, *args, **kwargs)
 
-    sellerName = models.CharField(max_length=100)
+    sellerName = models.CharField(max_length=100,default="")
     phoneNumber = models.IntegerField()
-    email = models.EmailField(max_length=100)
+    email = models.EmailField(max_length=100,default="")
 
 class UsedBooks(models.Model):
     def __init__(self, *args, **kwargs):
@@ -31,6 +31,6 @@ class UsedBooks(models.Model):
     prototype = models.ForeignKey(Prototype)
     seller = models.ForeignKey(Seller)
     price = models.IntegerField()
-    condition = models.CharField(max_length=100)
+    condition = models.CharField(max_length=100,default="")
     date = models.DateField(default=datetime.date.today)
 
