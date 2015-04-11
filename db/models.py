@@ -3,7 +3,6 @@ import datetime
 
 class Prototype(models.Model):
     isbn = models.IntegerField(primary_key=True)
-    isbn13 = models.IntegerField(blank=True)
     bookName = models.CharField(max_length=100)
     newPrice = models.IntegerField()
     publisher = models.CharField(max_length=100)
@@ -13,7 +12,7 @@ class Prototype(models.Model):
     course = models.CharField(max_length=100)
     faculty = models.CharField(max_length=100)
     programme = models.CharField(max_length=100)
-    cover = models.ImageField(upload_to="BookExchange/", blank=True)
+    cover = models.CharField(max_length=100)
 
 
 class Seller(models.Model):

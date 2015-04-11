@@ -3,7 +3,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "BookExchange.settings")
 from db.models import Prototype, UsedBooks, Seller
 
 
-def createSeller( sellerName, phoneNumber, email):
+def createSeller(sellerName, phoneNumber, email):
 	return Seller.objects.create(sellerName=sellerName, phoneNumber=phoneNumber, email=email)
 
 def getEmail(Seller):
