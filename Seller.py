@@ -15,8 +15,8 @@ def getSellerName(seller):
 def getNumber(seller):
 	return seller.phoneNUmber
 
-# def getBooks(seller): 
-# 	return Seller.objects.filter(seller=seller).values('UsedBooks.bookName')	
+def getBooks(seller): 
+ 	return UsedBooks.objects.filter(seller=seller)
 
 def modifyNumber(seller,phoneNumber):
 	return seller.phoneNumber = phoneNumber
