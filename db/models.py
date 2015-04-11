@@ -22,7 +22,7 @@ class Seller(models.Model):
 
     sellerName = models.CharField(max_length=100)
     phoneNumber = models.IntegerField()
-    email = models.CharField(max_length=100)
+    email = models.EmailField(max_length=100)
 
 class UsedBooks(models.Model):
     def __init__(self, *args, **kwargs):
