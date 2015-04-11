@@ -25,3 +25,16 @@ def getDate(UsedBooks):
 
 def getBooks(UsedBooks):
 	return UsedBooks.bookName
+
+
+#returns UsedBooks by the name (or substring name) of the book
+def searchByTitle(bookName):
+
+#returns UsedBooks by the author (or substring athor) of the book
+def searchByAuthor(authorName):
+
+#returns UsedBooks by the publisher (or substring publisher) of the book
+def searchByPublisher(publisherName):
+
+#returns UsedBooks by a keyword (title, author or publisher)
+def searchByKeyword(keyword):
