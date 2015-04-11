@@ -1,6 +1,5 @@
 from django.db import models
-
-# Create your models here.
+import datetime
 
 class Prototype(models.Model):
     isbn = models.IntegerField(primary_key=True)
@@ -34,5 +33,5 @@ class UsedBooks(models.Model):
     seller = models.ForeignKey(Seller)
     price = models.IntegerField()
     condition = models.CharField(max_length=100)
-    date = models.DateField()
+    date = models.DateField(default=datetime.date.today)
 

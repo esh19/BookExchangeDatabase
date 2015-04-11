@@ -5,10 +5,10 @@ from db.models import Prototype, UsedBooks, Seller
 #UsedBook
 
 def createSale(prototype, seller, condition, price, date):
-	return UsedBooks.objects.create(isbn=isbn, bookName=bookName, condition=condition, price=price, date=date, sellerId=sellerId)
+	return UsedBooks.objects.create(prototype=prototype, seller=seller, condition=condition, price=price, date=date)
 
 def modifyPrice(UsedBooks,price):
-	return UsedBooks.objects.filter(id=id).update(price=price)
+	return UsedBooks.price = price
 
 def getBookName(UsedBooks):
 	return UsedBooks.bookName
