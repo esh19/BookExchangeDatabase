@@ -6,20 +6,22 @@ from db.models import Prototype, UsedBooks, Seller
 def createSeller( sellerName, phoneNumber, email):
 	return Seller.objects.create(sellerName=sellerName, phoneNumber=phoneNumber, email=email)
 
-def getEmail(seller):
-	return seller.email
+def getEmail(Seller):
+	return Seller.email
 
 def getSellerName(seller):
 	return seller.sellerName
 
 def getNumber(seller):
-	return seller.phoneNUmber
+	return seller.phoneNumber
 
 def getBooks(seller): 
- 	return UsedBooks.objects.filter(seller=seller)
+  	return UsedBooks.objects.filter(seller=seller)
 
 def modifyNumber(seller,phoneNumber):
-	return seller.phoneNumber = phoneNumber
+ 	seller.phoneNumber = phoneNumber
+ 	seller.save()
 
 def modifyEmail(seller,email):
-	return seller.email = email
+ 	seller.email = email
+ 	seller.save()
