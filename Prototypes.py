@@ -29,7 +29,7 @@ def getCourse(prototype):
 
 
 def getAuthor(prototype):
-	return prototype.authorName
+	return prototype.bookAuthor
 		
 
 def modifyNewPrice(prototype,newPrice):
