@@ -4,16 +4,17 @@ from django.db import models
 
 class Prototype(models.Model):
     isbn = models.IntegerField(primary_key=True)
+    isbn13 = models.IntegerField(blank=True)
     bookName = models.CharField(max_length=100)
     newPrice = models.IntegerField()
     publisher = models.CharField(max_length=100)
     bookAuthor = models.CharField(max_length=100)
     edition = models.IntegerField()
     year = models.IntegerField()
-    course
-    faculty
-    programme
-    cover
+    course = models.CharField(max_length=100)
+    faculty = models.CharField(max_length=100)
+    programme = models.CharField(max_length=100)
+    cover = models.ImageField(upload_to="BookExchange/", blank=True)
 
 
 class Seller(models.Model):
