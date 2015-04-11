@@ -27,9 +27,11 @@ class Seller(models.Model):
 class UsedBooks(models.Model):
     def __init__(self, *args, **kwargs):
         models.Model.__init__(self, *args, **kwargs)
+
     
     prototype = models.ForeignKey(Prototype)
     seller = models.ForeignKey(Seller)
     price = models.IntegerField()
     condition = models.CharField(max_length=100)
+    date = models.DateField()
 
