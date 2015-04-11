@@ -7,6 +7,7 @@ def create(isbn, bookName, newPrice, publisher, bookAuthor, edition, year):
 
 def delete(prototype):
 	prototype.delete()
+	prototype.save()
 
 
 def bookExists(isbn):
@@ -32,7 +33,9 @@ def getAuthor(prototype):
 		
 
 def modifyNewPrice(prototype,newPrice):
-	return prototype.newPrice = newPrice
+	prototype.newPrice = newPrice
+	prototype.save()
 
 def modifyCourse(prototype,course):
-	return prototype.course = course
+	prototype.course = course
+	prototype.save()

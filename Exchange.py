@@ -8,7 +8,8 @@ def createSale(prototype, seller, condition, price, date):
 	return UsedBooks.objects.create(prototype=prototype, seller=seller, condition=condition, price=price, date=date)
 
 def modifyPrice(UsedBooks,price):
-	return UsedBooks.price = price
+	UsedBooks.price = price
+	UsedBooks.save()
 
 def getBookName(UsedBooks):
 	return UsedBooks.bookName
