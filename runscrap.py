@@ -6,6 +6,18 @@ import X2A
 
 books = []
 
-scraper = X2A.X2A(Prototype.createFromList)
-scraper.scrape()
 
+def postBooks(lst):
+    global books
+    books = lst
+    Prototype.createFromList(lst)
+    return True
+
+
+def testScraper():
+    scraper = X2A.X2A(postBooks)
+
+    scraper.scrape()
+
+
+testScraper()

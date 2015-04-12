@@ -2,17 +2,17 @@ from django.db import models
 import datetime
 
 class Prototype(models.Model):
-    isbn = models.IntegerField(primary_key=True)
-    bookName = models.CharField(max_length=100,default="")
-    newPrice = models.IntegerField()
-    publisher = models.CharField(max_length=100,default="")
-    bookAuthor = models.CharField(max_length=100,default="")
-    edition = models.IntegerField()
-    year = models.IntegerField()
-    course = models.CharField(max_length=100,default="")
-    faculty = models.CharField(max_length=100,default="")
-    programme = models.CharField(max_length=100,default="")
-    cover = models.CharField(max_length=100,default="")
+    isbn = models.CharField(primary_key=True, max_length=100)
+    bookName = models.CharField(max_length=100,default="",null=True)
+    newPrice = models.IntegerField(null=True)
+    publisher = models.CharField(max_length=100,default="",null=True)
+    bookAuthor = models.CharField(max_length=100,default="",null=True)
+    edition = models.IntegerField(null=True)
+    year = models.IntegerField(null=True)
+    course = models.CharField(max_length=100,default="",null=True)
+    faculty = models.CharField(max_length=100,default="",null=True)
+    programme = models.CharField(max_length=100,default="",null=True)
+    cover = models.CharField(max_length=100,default="",null=True)
 
 
 class Seller(models.Model):

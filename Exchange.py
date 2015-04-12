@@ -1,7 +1,8 @@
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "BookExchange.settings")
 from db.models import Prototype, UsedBooks, Seller
-
+import django
+django.setup()
 #UsedBook
 
 def createSale(prototype, seller, condition, price, date):
