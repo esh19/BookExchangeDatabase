@@ -1,11 +1,22 @@
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "BookExchange.settings")
-from db.models import Prototype, UsedBooks, Seller
+from db.models import Seller
 import django
 django.setup()
 
 def createSeller(sellerName, phoneNumber, email):
 	return Seller.objects.create(sellerName=sellerName, phoneNumber=phoneNumber, email=email)
+
+def getSellerById(identity):
+	return Seller.objects.filter(id=identity)
+
+def getAll():
+	return Seller.objects.all()
+def searchByName(name):
+	return Seller.objects.filter(sellerName__icontains = name)
+
+def getId(Seller):
+	return Seller.id
 
 def getEmail(Seller):
 	return Seller.email
@@ -19,10 +30,10 @@ def getNumber(seller):
 def getBooks(seller): 
   	return UsedBooks.objects.filter(seller=seller)
 
-def modifyNumber(seller,phoneNumber):
+def setNumber(seller,phoneNumber):
  	seller.phoneNumber = phoneNumber
  	seller.save()
 
-def modifyEmail(seller,email):
+def setEmail(seller,email):
  	seller.email = email
  	seller.save()

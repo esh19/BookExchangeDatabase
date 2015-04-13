@@ -32,5 +32,4 @@ class UsedBooks(models.Model):
     seller = models.ForeignKey(Seller)
     price = models.IntegerField()
     condition = models.CharField(max_length=100,default="")
-    date = models.DateField(default=datetime.date.today)
-
+    date = models.DateField(default=datetime.date.today, null=True)
